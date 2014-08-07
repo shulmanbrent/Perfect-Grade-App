@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  File Version: 3.2: 02/24/2014 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      	package="com.perfectgrade"
+      	android:versionCode="1"
+      	android:versionName="1.0">
+      	
+    	<!--  app requires Android 4.0 or above on device -->
+    	<uses-sdk android:minSdkVersion="14"/>
+    		
+    	<!--  required device permissions -->
+ 		<uses-permission android:name="android.permission.INTERNET" />
+		<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+		<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+		<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+		<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+		<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+		<uses-permission android:name="android.permission.CAMERA" />
+		<uses-permission android:name="android.permission.GET_ACCOUNTS" />
+		<uses-permission android:name="android.permission.READ_CONTACTS" />
+		<uses-permission android:name="android.permission.WRITE_CONTACTS" />
+		<uses-permission android:name="android.permission.RECORD_AUDIO" />
+		
+		<!-- Google Cloud Messaging permissions (PROJECT NUMBER REQUIRED FURTHER DOWN IN THIS DOCUMENT) -->
+		<permission android:name="com.perfectgrade.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+		<uses-permission android:name="com.perfectgrade.permission.C2D_MESSAGE" />		
+		<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+		<uses-permission android:name="android.permission.WAKE_LOCK" />
+    	<uses-permission android:name="android.permission.VIBRATE" />
+		
+		<!-- Google Maps permissions (GOOGLE MAPS FOR ANDROID API KEY REQUIRED FURHTER DOWN IN THIS DOCUMENT)    -->
+		<uses-permission android:name="com.perfectgrade.permission.MAPS_RECEIVE"/>
+		<uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+		<uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+		
+		<!-- other optional hardware features -->
+		<uses-feature android:name="android.hardware.camera" android:required="false" />
+		<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+		<uses-feature android:name="android.hardware.location" android:required="false" />
+		<uses-feature android:name="android.hardware.location.gps" android:required="false" />
+		<uses-feature android:name="android.hardware.telephony" android:required="false" />
+
+		<!-- supported screen sizes and density -->
+		<supports-screens 
+		    	android:resizeable="true"
+		    	android:anyDensity="true"
+		    	android:smallScreens="true" 
+                android:normalScreens="true" 
+                android:largeScreens="true"
+				android:xlargeScreens="true"
+        />		
+    	
+		<!-- application -->
+		<application android:name="perfectgrade_appDelegate"
+    					android:icon="@drawable/icon" 
+    					android:label="@string/app_name"
+    					android:theme="@style/hostThemeWithTitle"
+    					android:hardwareAccelerated="false"
+    					android:debuggable="true">
+           	
+           	<!-- Google Play Services
+           		Your project must reference the Google Play Service library project.
+           		See http://developer.android.com/google/play-services/setup.html
+           	 -->
+           	<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		    
+ 			<!-- 
+ 				Google Cloud Messaging Project Number   
+ 				Replace "YOUR_GOOGLE_GCM_PROJECT_NUMBER" with the Project Number provided by Google
+ 				See http://developer.android.com/google/gcm/gs.html
+ 			-->
+ 			<meta-data android:name="googleCloudMessagingProjectNumber" android:value="YOUR_GOOGLE_GCM_PROJECT_NUMBER_GOES_HERE"/>
+ 				
+ 			<!-- 
+ 				Google Maps v2 API Key  
+ 				Replace "GOOGLE_MAPS_FOR_ANDROID_V2_API_KEY_GOES_HERE" on the next line with the Google Maps for Android API Key provided by Google
+ 				See: https://developers.google.com/maps/documentation/android/start#installing_the_google_maps_android_v2_api
+ 			-->
+ 			<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="GOOGLE_MAPS_FOR_ANDROID_V2_API_KEY_GOES_HERE"/>
+ 			
+           	
+ 			<!-- Google Cloud Messaging -->
+		    <receiver android:name="com.perfectgrade.BT_gcmReceiver"
+		              android:permission="com.google.android.c2dm.permission.SEND" >
+		        <intent-filter>
+		            <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		            <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		            <category android:name="com.perfectgrade" />
+		        </intent-filter>
+		    </receiver>           	
+ 			<service android:name=".BT_gcmIntentService" />
+ 			
+          	<!-- BT_activity_start is the default, beginning activity, it may or may not load a splash screen fragment (plugin) -->
+           	<activity android:name=".BT_activity_start" android:label="@string/app_name" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/startThemeNoTitle">
+           		<intent-filter>
+                	<action android:name="android.intent.action.MAIN" />
+                	<category android:name="android.intent.category.LAUNCHER" />
+            	</intent-filter>
+        	</activity>
+        	
+           	<!-- BT_activity_host runs after startup and after splash screen (splash screens are not required -->
+           	<activity android:name=".BT_activity_host" android:label="@string/app_name" android:configChanges="keyboardHidden|orientation|screenSize" android:theme="@style/hostThemeWithTitle" android:uiOptions="splitActionBarWhenNarrow"></activity>
+           	
+           	
+    	</application>
+
+ 
+ 
+ 
+ </manifest>
+
+
+
+
+
+
+
+
+
+

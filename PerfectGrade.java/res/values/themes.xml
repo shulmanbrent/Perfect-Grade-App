@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    
+    <!-- BT_activity_start uses a no title theme -->
+	<style name="startThemeNoTitle" parent="@android:style/Theme.Holo">
+    	<item name="android:windowActionBar">false</item>
+    	<item name="android:windowNoTitle">true</item>
+	</style>
+	
+	<!-- BT_activity_host uses a title -->
+	<style name="hostThemeWithTitle" parent="@android:style/Theme.Holo.Light">
+    	<item name="android:windowActionBar">true</item>
+    	<item name="android:windowNoTitle">false</item>
+	</style>     
+    
+		
+</resources>

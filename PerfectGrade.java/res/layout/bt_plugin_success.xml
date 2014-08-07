@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerView"
+	android:background="@android:color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal">  
+
+		<TextView 
+	 		android:id="@+id/successText"
+	 		android:layout_width="fill_parent"
+	 		android:layout_height="wrap_content"
+			android:layout_marginTop="20dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:gravity="center_horizontal"
+			android:layout_centerHorizontal="true"
+			android:textSize="20sp"
+			android:text="Congratulations!\nYou have compiled an app :-)">
+	 	</TextView>    
+	
+		<ImageView 
+	   		android:id="@+id/successImage"
+	   		android:layout_width="fill_parent"
+	   		android:layout_height="fill_parent"
+			android:layout_marginTop="20dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:layout_centerHorizontal="true"
+			android:layout_centerInParent="true"
+			android:scaleType="center"
+			android:src="@drawable/bt_success">
+	   	</ImageView>	
+		
+		 <TextView 
+			android:id="@+id/versionText"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:layout_marginBottom="20dip"
+			android:gravity="bottom|center"
+			android:layout_centerHorizontal="true"
+			android:layout_alignParentBottom="true"
+			android:textSize="15sp"
+			android:text="Buzztouch Core for Android v3.0 ©2013">
+		</TextView>   	
+			
+</RelativeLayout>
+
+
+
+	
+
+

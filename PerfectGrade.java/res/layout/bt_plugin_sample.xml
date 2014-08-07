@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/containerView"
+	android:background="@android:color/transparent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"> 
+	    
+		<TextView 
+	 		android:id="@+id/dynamicText"
+	 		android:layout_width="fill_parent"
+	 		android:layout_height="wrap_content"
+			android:layout_marginTop="20dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:gravity="center_horizontal"
+			android:layout_centerHorizontal="true"
+			android:textSize="20dip"
+			android:text="You have loaded the\nBuzztouch Core for Android!">
+	 	</TextView>    
+   
+		<ImageView 
+	   		android:id="@+id/successImage"
+	   		android:layout_below="@+id/dynamicText"
+	   		android:layout_width="wrap_content"
+	   		android:layout_height="wrap_content"
+			android:layout_marginTop="20dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:layout_centerHorizontal="true"
+			android:scaleType="center"
+			android:src="@drawable/bt_success">
+	   	</ImageView>		
+		
+		<Button xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/dynamicButton"
+			android:layout_below="@id/successImage"
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="10dip"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip"
+			android:layout_centerHorizontal="true">
+		</Button>	
+ 			
+</RelativeLayout>
+
+
+
+
